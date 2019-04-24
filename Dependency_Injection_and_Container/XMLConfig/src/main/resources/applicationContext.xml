@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- load the properties file sport.properties -->
+	<context:property-placeholder location="classpath:sport.properties"/>
+
+	<!-- By default all beans are singletons -->
+	<bean id="loggerConfig" class="com.wagner.xmlconfig.logging.LoggerConfig" init-method="initLogger">
+		<property name="rootLoggerLevel" value="FINE"/>
+		<property name="printedLoggerLevel" value="FINE"/>
+	</bean>
+
+	<!-- not necessary to define singleton scope explicitly -->
+	<bean id="fortuneService" class="com.wagner.xmlconfig.service.HappyFortuneService" scope="singleton"/>
+
+	<!-- scope="prototype": for every bean request a new object is created -->
+	<bean id="myCoach" class="com.wagner.xmlconfig.coach.TrackCoach" scope="prototype">
+		<!-- Dependency injection via constructor -->
+		<constructor-arg ref="fortuneService"/>
+	</bean>
+
+	<bean id="cricketCoach" class="com.wagner.xmlconfig.coach.CricketCoach">
+		<!-- Dependency injection via setter method -->
+		<property name="fortuneService" ref="fortuneService"/>
+
+		<!-- Injecting literal values from sport.properties via setter method -->
+		<property name="emailAddress" value="${email}"/>
+		<property name="team" value="${team}"/>
+	</bean>
+
+	<bean id="trackCoach" class="com.wagner.xmlconfig.coach.TrackCoach" init-method="init" destroy-method="destroy">
+		<constructor-arg ref="fortuneService"/>
+	</bean>
+
+</beans>
