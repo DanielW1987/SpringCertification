@@ -12,6 +12,8 @@
         <module>Dependency_Injection_and_Container/XMLConfig</module>
         <module>Dependency_Injection_and_Container/JavaConfig</module>
         <module>Dependency_Injection_and_Container/AnnotationConfig</module>
+        <module>MVC/SpringMvcIntro</module>
+        <module>MVC/FormProcessingAndValidation</module>
     </modules>
 
     <dependencies>
