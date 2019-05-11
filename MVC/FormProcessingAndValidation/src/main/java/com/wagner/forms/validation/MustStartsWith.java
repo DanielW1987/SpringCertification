@@ -14,15 +14,15 @@ import javax.validation.Payload;
 public @interface MustStartsWith {
 
 	// validate against a single specific value
-	public String value();
+	String value();
 	
 	// validate against specific values
 	// public String[] value() default{"value1", "value2"};
 	
-	public String message() default "Field must start with a specific value";
+	String message() default "Field must start with a specific value";
 	
-	public Class<?>[] groups() default {};
+	Class<?>[] groups() default {};
 	
-	public Class<? extends Payload>[] payload() default {};
+	Class<? extends Payload>[] payload() default {};
 	
 }

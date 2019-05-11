@@ -8,7 +8,6 @@
 </head>
 <body>
 	<p>The student is confirmed: ${student.firstName} ${student.lastName} (${student.country})</p>
-	<p>Birthday: ${student.birthday}</p>
 	<p>Free passes: ${student.freePasses}</p>
 	<p>Postal code: ${student.postalCode}</p>
 	<p>Course code: ${student.courseCode}</p>

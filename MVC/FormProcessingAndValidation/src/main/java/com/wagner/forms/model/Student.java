@@ -17,8 +17,6 @@ public class Student {
 	@Size(min=3, max=10, message="field is required and must be a value between 3 and 10 characters")
 	private String lastName;
 
-	private LocalDate birthday;
-
 	@Min(value=5, message="minimum value is 5")
 	@Max(value=10, message="maximum value is 10")
 	@NotNull(message="field is required")
@@ -60,15 +58,6 @@ public class Student {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public LocalDate getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(String birthday) {
-		String[] dateParts = birthday.split("-");
-		this.birthday = LocalDate.of(Integer.valueOf(dateParts[0]), Integer.valueOf(dateParts[1]), Integer.valueOf(dateParts[2]));
 	}
 
 	public Integer getFreePasses() {
