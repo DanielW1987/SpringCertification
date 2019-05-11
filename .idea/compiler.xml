@@ -6,8 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="XMLConfig" />
+        <module name="FormProcessingAndValidation" />
+        <module name="JDBCTemplate" />
+        <module name="Hibernate03AdvancedMappings" />
+        <module name="SpringMvcIntro" />
+        <module name="Hibernate02CRUDFeatures" />
         <module name="AnnotationConfig" />
+        <module name="Hibernate01Intro" />
+        <module name="XMLConfig" />
+        <module name="SimpleJDBC" />
         <module name="JavaConfig" />
       </profile>
     </annotationProcessing>
