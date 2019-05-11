@@ -14,6 +14,9 @@
         <module>Dependency_Injection_and_Container/AnnotationConfig</module>
         <module>MVC/SpringMvcIntro</module>
         <module>MVC/FormProcessingAndValidation</module>
+        <module>DataJPA/Hibernate01Intro</module>
+        <module>DataJPA/Hibernate02CRUDFeatures</module>
+        <module>DataJPA/Hibernate03AdvancedMappings</module>
     </modules>
 
     <dependencies>
