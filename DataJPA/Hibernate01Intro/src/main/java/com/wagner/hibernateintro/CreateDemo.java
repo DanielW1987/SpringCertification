@@ -1,11 +1,13 @@
 package com.wagner.hibernateintro;
 
+import com.wagner.hibernateintro.model.Gender;
 import com.wagner.hibernateintro.model.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class Application {
+public class CreateDemo {
 
   public static void main(String[] args) {
     SessionFactory factory = new Configuration()
@@ -13,22 +15,29 @@ public class Application {
                                  .addAnnotatedClass(Student.class)
                                  .buildSessionFactory();
 
-    Session session = factory.getCurrentSession();
+    Session session = factory.openSession();
 
     try {
-      // create a student object
-      Student student = new Student("John", "Doe", "john.doe@example.com");
+      Transaction transaction = session.getTransaction();
 
       // start transaction
-      session.getTransaction().begin();
+      transaction.begin();
+
+      // create a student object
+      Student student1 = new Student("John", "Doe", "john.doe@example.com", Gender.MALE);
+      Student student2 = new Student("Maria", "Wall", "maria.wall@example.com", Gender.FEMALE);
 
       // save the student
-      session.save(student);
+      session.save(student1);
+      session.persist(student2);
 
       // commit the transaction
-      session.getTransaction().commit();
+      transaction.commit();
     }
     finally {
+      session.close();
+
+      // only close factory when exiting the application
       factory.close();
     }
   }

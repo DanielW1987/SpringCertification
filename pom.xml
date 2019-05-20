@@ -15,8 +15,7 @@
         <module>MVC/SpringMvcIntro</module>
         <module>MVC/FormProcessingAndValidation</module>
         <module>DataJPA/Hibernate01Intro</module>
-        <module>DataJPA/Hibernate02CRUDFeatures</module>
-        <module>DataJPA/Hibernate03AdvancedMappings</module>
+        <module>DataJPA/Hibernate02AdvancedMappings</module>
         <module>DataJPA/JDBCTemplate</module>
         <module>DataJPA/SimpleJDBC</module>
     </modules>

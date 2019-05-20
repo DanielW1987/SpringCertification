@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Hibernate02CRUDFeatures</artifactId>
+    <artifactId>Hibernate02AdvancedMappings</artifactId>
 
 
 </project>

@@ -23,13 +23,18 @@ public class Student {
   @Column(name = "email", unique = true)
   private String email;
 
+  @Column(name = "gender")
+  @Enumerated(value = EnumType.STRING)
+  private Gender gender;
+
   public Student() {
   }
 
-  public Student(String firstName, String lastName, String email) {
+  public Student(String firstName, String lastName, String email, Gender gender) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
+    this.gender = gender;
   }
 
   public int getId() {
@@ -72,13 +77,23 @@ public class Student {
     this.email = email;
   }
 
+  public Gender getGender() {
+    return gender;
+  }
+
+  public void setGender(Gender gender) {
+    this.gender = gender;
+  }
+
   @Override
   public String toString() {
     return "Student{" +
             "id=" + id +
             ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
+            ", alias='" + alias + '\'' +
             ", email='" + email + '\'' +
+            ", gender=" + gender +
             '}';
   }
 
